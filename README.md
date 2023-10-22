@@ -1,6 +1,7 @@
 # Arduino-based
 Lets integrate sensors with arduino>>>
 1.Fire Detector using Flame Sensor and Arduino Interface:
+  sensor used: YL-38
 
 Wire Connections:
 
@@ -10,6 +11,7 @@ Connect the DO (Digital Output) pin of the flame sensor to a digital input pin o
 
 
 2.Interface touch sensor with arduino:
+  Sensor used: TTP223 Capacitive Touch Sensor
 
 wire connections:
 Sig Pin of TTP223  Touch Sensor ——————->Arduino Digital Pin D7
@@ -20,6 +22,7 @@ LED negative pin --------—————————————–>Arduino Grou
 
 
 3.Interfacing humidity sensor with Arduino:
+  Sensor used: DHT11
 
 wire connections:
 VCC Pin of DHT11 Sensor Module-------> 3.3V pin of Arduino
