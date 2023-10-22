@@ -1,0 +1,63 @@
+RC4 ENCRYPTION AND DECRYPTION ALGORITHM:
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void swap(unsigned char *a, unsigned char *b) {
+unsigned char tmp = *a;
+* a =*b
+* b = tmp ;
+} void rc4_init(unsigned char *key, int key_length, unsigned char *S) {
+for (int i = 0 i < 256 i++) {
+S[i] = i
+{
+int j = 0
+for (int i = 0 ;i<256:i++)/
+j=( j + S[i] +key[i\%\% key_length]) % 256;
+swap(&S[i], &S[j]);
+}
+
+}
+
+void rc4_crypt(unsigned char *input, int input_length, unsigned char *output,unsigned char *S) (
+int i = 0 j = 0
+for (int k =0: k <input_length; k++) {
+i = (i + 1)% * 256
+j = (j + S[i])% * 256
+swap(&S[i], &S[j]);
+output[k] = input[k] ^ S[(S[i] + S[j]) % 256];
+}
+
+}
+
+int main() {
+unsigned char key[] = "mysecretkey";
+int key_length = strlen(key);
+unsigned char S[256];
+rc4_init(key, key_length, S);
+unsigned char plaintext[] = "Hello world";
+int plaintext_length = strlen(plaintext);
+unsigned char ciphertext [plaintext_length];
+rc4_crypt(plaintext, plaintext_length, ciphertext, S);
+printf("Plaintext: %s\n", plaintext);
+printf("Ciphertext: ");
+for (int i = 0; i < plaintext_length; i++) {
+printf("%02x ", ciphertext[i]);
+}
+
+}
+
+int main() {
+unsigned char key[] = "mysecretkey";
+int key_length = strlen(key);
+unsigned char S[256];
+rc4_init(key, key_length, S);
+unsigned char plaintext[] = "Hello world";
+int plaintext_length = strlen(plaintext);
+unsigned char ciphertext [plaintext_length];
+rc4_crypt(plaintext, plaintext_length, ciphertext, S);
+printf("Plaintext: %s\n", plaintext);
+printf("Ciphertext: ");
+for (int i = 0; i < plaintext_length; i++) {
+printf("%02x ", ciphertext[i]);
